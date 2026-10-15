@@ -1,0 +1,71 @@
+@font-face{font-family:CourseSans;src:url('../fonts/bricolage-grotesque.woff2') format('woff2');font-weight:400 700;font-display:swap}
+:root{color-scheme:light;--paper:#f7f5ed;--ink:#26352b;--muted:#647064;--accent:#416b43;--line:#d8dfce;--wash:#edf0e5}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:19px/1.65 Georgia,serif}
+a{color:var(--accent);text-underline-offset:.18em}
+a:hover{text-decoration-thickness:2px}
+button,input{font:inherit}
+input{accent-color:var(--accent)}
+:focus-visible{outline:3px solid #8c632a;outline-offset:5px}
+[hidden]{display:none!important}
+.course-shell{max-width:1080px;margin:auto;padding:42px clamp(22px,5vw,72px) 70px}
+.course-nav,.course-kicker,.course-tag,.course-controls,figcaption,.course-source,.course-quiz,.course-table th,.course-footer{font-family:CourseSans,Arial,sans-serif}
+.course-nav{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:14px;border-bottom:1px solid var(--line);padding-bottom:18px}
+.course-nav a{text-decoration:none}
+.course-kicker{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:48px 0 12px}
+h1{font-size:clamp(38px,5.4vw,66px);font-weight:400;line-height:1.08;letter-spacing:-.045em;max-width:15ch;margin:0 0 24px}
+h2{font-size:30px;line-height:1.2;font-weight:400;letter-spacing:-.025em;margin:40px 0 16px}
+h3{font-size:22px;font-weight:400;line-height:1.3;margin:0 0 9px}
+p{max-width:65ch;margin:0 0 18px}
+.course-lead{font-size:23px;max-width:42ch;line-height:1.5}
+.course-source{font-size:13px;color:var(--muted)}
+.course-source a{color:inherit}
+.course-layers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:32px 0}
+.course-layers article{border-top:2px solid var(--line);padding-top:14px}
+.course-layers h2{margin:0 0 9px;font-size:22px}
+.course-layers p{font-size:17px;line-height:1.55}
+.course-tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:10px}
+.course-demo-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:36px;align-items:start;margin:26px 0}
+figure{margin:0}
+.forest-demo__scene{position:relative;isolation:isolate;overflow:hidden;border-radius:12px;background:#233727;aspect-ratio:420/480}
+.forest-demo__scene>img{position:absolute;width:100%;height:100%;object-fit:cover;opacity:.3;z-index:-1}
+.forest-demo__scene>svg{display:block;width:100%;height:100%}
+.forest-demo__twig{transform-box:view-box;transform-origin:0 0}
+.forest-demo__base{fill:#f4a899;stroke:#233727;stroke-width:.6}
+[data-aligned="true"] .forest-demo__base{fill:#d6f0a4}
+figcaption{font-size:12px;line-height:1.55;color:var(--muted);padding-top:12px}
+.course-controls{border:0;padding:0;margin:0 0 20px;font-size:15px}
+.course-controls legend{font-weight:600;margin-bottom:8px}
+.course-controls label{display:flex;align-items:center;gap:10px;min-height:44px;cursor:pointer}
+.course-controls input{width:18px;height:18px;flex:none}
+.course-controls:disabled{opacity:.65}
+.course-feedback{background:var(--wash);padding:15px 18px;border-left:3px solid var(--accent);font-size:16px;line-height:1.6}
+.course-note{font-size:17px;color:var(--muted)}
+.course-quiz{margin:28px 0;border-top:1px solid var(--line);padding-top:24px;font-size:16px}
+.course-quiz fieldset{border:0;padding:0;margin:0;min-width:0}
+.course-quiz legend{font-size:18px;font-weight:500;line-height:1.4;margin-bottom:16px}
+.course-quiz label{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:6px;padding:12px 15px;margin:8px 0;cursor:pointer}
+.course-quiz label:has(input:checked){background:var(--wash);border-color:var(--accent)}
+.course-quiz input{width:17px;height:17px;flex:none}
+.course-quiz [role="status"]{min-height:1.6em;margin-top:12px;font-size:15px}
+.course-reminder{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;margin:35px 0;font-style:italic}
+.course-table{border-collapse:collapse;width:100%;font-size:16px;margin:26px 0}
+.course-table th,.course-table td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:14px 12px 14px 0}
+.course-table th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.course-glossary dt{font-weight:bold;font-size:18px;margin-top:16px}
+.course-glossary dd{margin:0;font-size:17px;max-width:63ch}
+.course-footer{font-size:14px;color:var(--muted);margin-top:40px}
+code{font-size:.85em;overflow-wrap:anywhere}
+@media(max-width:680px){body{font-size:18px}.course-shell{padding-top:25px}.course-kicker{margin-top:32px}.course-layers{grid-template-columns:1fr;gap:14px}.course-layers p{margin-bottom:0}.course-demo-grid{grid-template-columns:1fr;gap:24px}.forest-demo__scene{max-width:400px;margin:auto}.course-lead{font-size:21px}.course-table{font-size:14px}.course-table th,.course-table td{padding-right:8px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+@media print{body{background:white;color:#111;font-size:11pt}.course-shell{max-width:none;padding:0}.course-nav,.course-controls,.course-quiz,.course-footer{display:none}.course-kicker{margin-top:0}h1{font-size:30pt;max-width:none}h2{font-size:19pt;margin-top:22px}.course-lead{font-size:14pt}.course-layers{grid-template-columns:repeat(3,1fr);gap:15px}.course-layers p,.course-note,.course-feedback,.course-glossary dd{font-size:11pt}.course-demo-grid{grid-template-columns:1fr 1fr;gap:20px}.forest-demo__scene{max-height:250px;max-width:220px;print-color-adjust:exact}.forest-demo__twig{transform:none!important}.course-table{font-size:10pt}.course-table tr,.course-layers article,figure{break-inside:avoid}a{color:inherit}.course-reminder{margin:20px 0;padding:12px 0}}
+@media print{
+  .course-reference{font-size:10pt;line-height:1.4}
+  .course-reference h1{font-size:26pt;margin-bottom:16px}
+  .course-reference h2{font-size:17pt;margin:18px 0 10px}
+  .course-reference .course-table{font-size:9.5pt;margin:18px 0}
+  .course-reference .course-table th,.course-reference .course-table td{padding-block:9px}
+  .course-reference .course-glossary{display:grid;grid-template-columns:90px 1fr;gap:10px 16px;break-inside:avoid}
+  .course-reference .course-glossary dt,.course-reference .course-glossary dd{font-size:10pt;margin:0}
+  .course-reference .course-source{font-size:8pt}
+}

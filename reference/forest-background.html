@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forest background — Quick reference</title>
+  <link rel="stylesheet" href="../assets/teaching/course.css">
+</head>
+<body class="course-reference">
+  <main class="course-shell">
+    <nav class="course-nav" aria-label="Reference navigation"><a href="../lessons/0001-how-the-forest-background-works.html">← Lesson 01</a><a href="../index.html">Your portfolio ↗</a></nav>
+    <p class="course-kicker">Quick reference · Printable</p>
+    <h1>Which layer<br>should change?</h1>
+    <table class="course-table"><thead><tr><th scope="col">Desired change</th><th scope="col">Layer</th><th scope="col">In this portfolio</th></tr></thead><tbody>
+      <tr><td>Different photographic forest</td><td>JPEG image</td><td><code>assets/images/forest.jpg</code></td></tr>
+      <tr><td>Brighter forest atmosphere</td><td>CSS colors and overlays</td><td><code>styles.css</code></td></tr>
+      <tr><td>Different tree or leaf shapes</td><td>SVG paths</td><td>Inline tree in <code>index.html</code></td></tr>
+      <tr><td>Leaves properly joined to stems</td><td>SVG positions and joints</td><td>The <code>#sprig</code> template and placed leaf clusters</td></tr>
+      <tr><td>Slower or gentler swaying</td><td>Animation settings</td><td><code>script.js</code>; maximum angle in <code>data-sway</code></td></tr>
+    </tbody></table>
+    <h2>The detached-leaf check</h2>
+    <ol>
+      <li><strong>Pause movement.</strong> A gap that remains is already in the drawing.</li>
+      <li><strong>Align the base.</strong> Each leaf meets its stem; each cluster meets its branch.</li>
+      <li><strong>Resume movement.</strong> The joint should stay fixed while the tip swings.</li>
+    </ol>
+    <p>Anime.js changes positions or angles over time. It does not automatically attach one shape to another.</p>
+    <h2>Five useful words</h2>
+    <dl class="course-glossary">
+      <dt>Raster / JPEG</dt><dd>An image stored as a grid of colored pixels, used here for the forest photograph.</dd>
+      <dt>Vector / SVG</dt><dd>A drawing described by shapes and paths, used here for the foreground tree.</dd>
+      <dt>Group</dt><dd>Shapes that receive a transformation together, like a stem and its leaves.</dd>
+      <dt>Base</dt><dd>The point where a leaf or twig should meet its supporting stem or branch.</dd>
+      <dt>Pivot</dt><dd>The point that stays fixed while a shape rotates. A swaying twig’s pivot belongs at its base.</dd>
+    </dl>
+    <p class="course-source">Sources: <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Including_vector_graphics_in_HTML">MDN: raster and vector images</a> · <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/g">MDN: groups</a> · <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/transform">MDN: transforms</a> · <a href="https://animejs.com/documentation/animation/">Anime.js</a>.</p>
+    <p class="course-footer">Return to the <a href="../lessons/0001-how-the-forest-background-works.html">interactive explanation</a>, or ask the agent a follow-up question.</p>
+  </main>
+</body>
+</html>

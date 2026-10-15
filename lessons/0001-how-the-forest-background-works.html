@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A photograph, a drawing, a breeze — Portfolio lesson 01</title>
+  <link rel="stylesheet" href="../assets/teaching/course.css">
+  <script src="../assets/vendor/anime-4.3.0.umd.min.js" defer></script>
+  <script src="../assets/teaching/forest-demo.js" defer></script>
+  <script src="../assets/teaching/lesson.js" defer></script>
+</head>
+<body>
+  <main class="course-shell">
+    <nav class="course-nav" aria-label="Lesson navigation"><a href="../index.html">← Your portfolio</a><a href="../reference/forest-background.html">Quick reference ↗</a></nav>
+    <p class="course-kicker">Lesson 01 · About 3 minutes · Understand your portfolio</p>
+    <h1>A photograph,<br>a drawing,<br>a breeze.</h1>
+    <p class="course-lead">The forest scene looks like one image. It is several layers, and each has a different job.</p>
+    <p>Your win: know which layer to change when something looks wrong.</p>
+
+    <section class="course-layers" aria-label="The three parts of this background">
+      <article><span class="course-tag">01 / Atmosphere</span><h2>JPEG photograph</h2><p><code>assets/images/forest.jpg</code> supplies the faint forest behind the content. A JPEG stores a grid of colored pixels.</p></article>
+      <article><span class="course-tag">02 / Shape</span><h2>SVG drawing</h2><p>The foreground tree in <code>index.html</code> is drawn from paths. Its leaves are reusable shapes with individual positions.</p></article>
+      <article><span class="course-tag">03 / Movement</span><h2>Anime.js breeze</h2><p><code>script.js</code> slowly rotates groups of SVG shapes. The photograph’s individual leaves are not being animated.</p></article>
+    </section>
+    <p class="course-source">Sources: <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Including_vector_graphics_in_HTML">MDN: raster and vector graphics</a> · <a href="https://animejs.com/documentation/animation/">Anime.js: animation</a> · this portfolio’s source files.</p>
+
+    <section aria-labelledby="attachment-title">
+      <h2 id="attachment-title">You spotted a real gap.</h2>
+      <p>I placed some leaf bases slightly away from the curved stem. That twig was reused throughout the tree, so its small placement errors repeated. Checking the drawing with motion disabled confirmed the gaps. The portfolio now has corrected joins; this diagram preserves the earlier version so you can compare.</p>
+      <p><strong>Moving a drawing does not repair its joins.</strong> Think of paper leaves glued to a paper twig: waving the whole piece preserves any gaps that were already there.</p>
+
+      <div class="course-demo-grid" data-forest-demo>
+        <figure>
+          <div class="forest-demo__scene">
+            <img src="../assets/images/forest.jpg" alt="" data-demo-photo>
+            <svg viewBox="0 0 420 480" role="img" aria-labelledby="twig-title twig-description" data-demo-drawing>
+              <title id="twig-title">An enlarged twig from the portfolio</title>
+              <desc id="twig-description">Six leaves sit along a curved stem. Small dots mark their bases. Use the adjacent controls to compare the original positions with positions on the stem.</desc>
+              <defs>
+                <g id="lesson-leaf"><path d="M0 0C-37-17-51-57-31-94 1-75 20-34 0 0Z" fill="#96ad68"/><path d="M0 0-29-85M-8-29l-20-14M-15-46l9-13M-22-65l-13-9" fill="none" stroke="#d5e3ae" stroke-width=".8"/></g>
+              </defs>
+              <path d="M280 480C274 457 280 441 280 420" fill="none" stroke="#82905b" stroke-width="13" stroke-linecap="round"/>
+              <g transform="translate(280 420)">
+                <g class="forest-demo__twig" data-demo-twig>
+                  <path d="M0 0c-1-99-39-160-100-215" fill="none" stroke="#c1cea1" stroke-width="3" data-demo-stem/>
+                  <use href="#lesson-leaf" transform="translate(-3 -34) rotate(58) scale(.65)" data-demo-leaf/>
+                  <use href="#lesson-leaf" transform="translate(-10 -67) rotate(-51) scale(.78)" data-demo-leaf/>
+                  <use href="#lesson-leaf" transform="translate(-24 -102) rotate(42) scale(.85)" data-demo-leaf/>
+                  <use href="#lesson-leaf" transform="translate(-42 -139) rotate(-47) scale(.72)" data-demo-leaf/>
+                  <use href="#lesson-leaf" transform="translate(-63 -173) rotate(28) scale(.7)" data-demo-leaf/>
+                  <use href="#lesson-leaf" transform="translate(-92 -205) rotate(-25) scale(.6)" data-demo-leaf/>
+                </g>
+                <circle r="5" fill="#f5f1d9" stroke="#233727" stroke-width="2"/>
+              </g>
+            </svg>
+          </div>
+          <figcaption>The portfolio’s original <code>#sprig</code> arrangement, enlarged and preserved from before the fix. Colored dots mark leaf bases; the cream pin marks the twig’s fixed pivot. This comparison changes only the lesson diagram.</figcaption>
+        </figure>
+        <div>
+          <fieldset class="course-controls"><legend>Explore the layers</legend>
+            <label><input type="checkbox" data-control="photo" checked> Show JPEG photo</label>
+            <label><input type="checkbox" data-control="drawing" checked> Show SVG twig</label>
+            <label><input type="checkbox" data-control="wind"> Add a gentle breeze</label>
+            <label><input type="checkbox" data-control="align"> Align the leaf bases</label>
+          </fieldset>
+          <p class="course-feedback" data-demo-status role="status">The original leaf positions are shown.</p>
+          <p class="course-note" data-motion-note hidden>Your reduced-motion preference keeps the breeze off.</p>
+          <p class="course-note">Try this: hide the photo, turn on the breeze, then align the bases. Notice that changing the photo cannot close an SVG gap.</p>
+          <p class="course-note">A good joint needs both correct placement and a fixed pivot. Here, aligning the leaf bases fixes this twig. Larger leaf clusters also need their bases positioned on their branches.</p>
+        </div>
+      </div>
+      <p class="course-source">Why the twig moves together: <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/g">MDN: SVG groups</a>. Why the pin stays fixed: <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/transform">MDN: rotation around a chosen point</a>.</p>
+    </section>
+
+    <section aria-labelledby="practice-title">
+      <h2 id="practice-title">Make one design decision.</h2>
+      <p>Look away from the explanation first. Then choose an answer.</p>
+      <div class="course-quiz" data-quiz data-correct="svg" data-explanation="The SVG drawing contains the foreground leaf shapes. The JPEG supplies the photographic background.">
+        <fieldset><legend>1. You want to change the foreground leaves’ shape. Which layer would you edit?</legend>
+          <label><input type="radio" name="layer" value="jpeg"> The JPEG forest photograph</label>
+          <label><input type="radio" name="layer" value="svg"> The SVG foreground drawing</label>
+          <label><input type="radio" name="layer" value="css"> The CSS background overlay</label>
+        </fieldset><p role="status"></p>
+      </div>
+      <div class="course-quiz" data-quiz data-correct="align" data-explanation="A gap that remains with motion off is a placement problem. First put each leaf base on its stem; then check the joint while it moves.">
+        <fieldset><legend>2. Leaves still float when the breeze is off. What should you change first?</legend>
+          <label><input type="radio" name="repair" value="speed"> Increase the animation speed</label>
+          <label><input type="radio" name="repair" value="photo"> Replace the forest photograph</label>
+          <label><input type="radio" name="repair" value="align"> Align the leaf bases</label>
+        </fieldset><p role="status"></p>
+      </div>
+    </section>
+
+    <p class="course-reminder">Tomorrow, before reopening this page: which layer makes the leaves, and what does pausing their movement help you diagnose?</p>
+    <h2>One useful next read.</h2>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Including_vector_graphics_in_HTML">MDN: Including vector graphics in HTML</a> — read just “What are vector graphics?” Its zoomed-in comparison makes the JPEG/SVG distinction tangible.</p>
+    <p class="course-footer">Ask the agent about anything unclear, or share your answers and explain why you chose them. Keep the <a href="../reference/forest-background.html">one-page reference</a> for later.</p>
+    <noscript><p>The explanation is available without JavaScript. Enable it to use the layer controls and answer feedback.</p></noscript>
+  </main>
+</body>
+</html>

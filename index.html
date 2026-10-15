@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#19251a">
+  <meta name="description" content="A small corner of the internet for thoughtful websites, a curious eye, and things that grow. A developer and photographer's portfolio.">
+  <title>Lorem Ipsum — websites, naturally.</title>
+  <link rel="icon" href="assets/leaf.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    document.documentElement.classList.add('js', 'booting');
+    history.scrollRestoration = 'manual';
+    // Prevent the browser's delayed fragment jump from overriding our upward entry point.
+    window.portfolioEntryUrl = location.href;
+    if (location.hash) history.replaceState(history.state, '', location.href.split('#')[0]);
+    window.setTimeout(() => document.documentElement.classList.remove('booting'), 3500);
+  </script>
+  <script src="content.js" defer></script>
+  <script src="assets/vendor/anime-4.3.0.umd.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#roots">Skip to the introduction</a>
+
+  <div class="ambience" aria-hidden="true">
+    <div class="forest-backdrop"></div>
+    <div class="sunlight"></div>
+    <div class="grain"></div>
+    <div id="pollen" class="pollen"></div>
+  </div>
+
+  <header class="site-header">
+    <a class="wordmark" href="#roots" aria-label="Back to the roots">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 25C3 13 10 5 26 5c0 16-8 24-19 20Z"/><path d="m5 28 15-16M11 22l-1-8m5 4 7-1"/></svg>
+      <span data-text="name">Lorem Ipsum</span><span class="wordmark-dot">.</span>
+    </a>
+    <div class="header-right">
+      <span class="height-readout mono" aria-hidden="true">Height <span id="height-value">00</span> m</span>
+      <a class="header-contact mono" href="#treetop">Let’s talk <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle mono" id="open-menu" aria-label="Open navigation" aria-haspopup="dialog">Menu <span class="menu-icon" aria-hidden="true"></span></button>
+    </div>
+  </header>
+
+  <nav class="height-rail" aria-label="Explore the tree">
+    <div class="rail-line" aria-hidden="true"><span id="rail-marker"></span></div>
+    <a href="#roots" data-rail="roots" class="is-active" aria-current="location"><span>Roots</span><small>00 m</small><i></i></a>
+    <a href="#trunk" data-rail="trunk"><span>Trunk</span><small>06 m</small><i></i></a>
+    <a href="#branches" data-rail="branches"><span>Branches</span><small>14 m</small><i></i></a>
+    <a href="#canopy" data-rail="canopy"><span>Canopy</span><small>23 m</small><i></i></a>
+    <a href="#treetop" data-rail="treetop"><span>Treetop</span><small>30 m</small><i></i></a>
+  </nav>
+
+  <main class="ascent" id="main-content">
+    <div class="tree-world" aria-hidden="true">
+      <!-- Inline foliage lets Anime.js move each cluster around its own branch joint. -->
+      <svg class="tree" xmlns="http://www.w3.org/2000/svg" width="900" height="6000" viewBox="0 0 900 6000" preserveAspectRatio="none" focusable="false">
+        <defs>
+          <linearGradient id="bark" x1="0" x2="1"><stop stop-color="#405236"/><stop offset=".23" stop-color="#8a9060"/><stop offset=".42" stop-color="#606d47"/><stop offset=".7" stop-color="#354b32"/><stop offset="1" stop-color="#203726"/></linearGradient>
+          <linearGradient id="branch" x1="0" x2="1"><stop stop-color="#7c8b56"/><stop offset="1" stop-color="#435b38"/></linearGradient>
+          <linearGradient id="leaf-fill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a7b76c"/><stop offset=".5" stop-color="#65824c"/><stop offset="1" stop-color="#375534"/></linearGradient>
+          <g id="leaf"><path d="M0 0C-37-17-51-57-31-94 1-75 20-34 0 0Z" fill="url(#leaf-fill)"/><path d="M0 0-29-85M-8-29l-20-14M-15-46l9-13M-22-65l-13-9" fill="none" stroke="#c0ca91" stroke-width=".8" opacity=".5"/></g>
+          <!-- Leaf bases follow the curved stem's centerline in every reused twig. -->
+          <g id="sprig">
+            <path d="M0 0c-1-99-39-160-100-215" fill="none" stroke="#81915b" stroke-width="3"/>
+            <use href="#leaf" transform="translate(-1.9 -34.1) rotate(58) scale(.65)"/>
+            <use href="#leaf" transform="translate(-7.5 -67.6) rotate(-51) scale(.78)"/>
+            <use href="#leaf" transform="translate(-18.7 -104.2) rotate(42) scale(.85)"/>
+            <use href="#leaf" transform="translate(-37.3 -141.8) rotate(-47) scale(.72)"/>
+            <use href="#leaf" transform="translate(-60.9 -174.7) rotate(28) scale(.7)"/>
+            <use href="#leaf" transform="translate(-90.6 -206.3) rotate(-25) scale(.6)"/>
+          </g>
+          <g id="bough"><path d="M0 0C-85-131-161-170-294-204" fill="none" stroke="url(#branch)" stroke-width="13" stroke-linecap="round"/><use href="#sprig" transform="translate(-65 -83) rotate(-20) scale(1.1)"/><use href="#sprig" transform="translate(-119 -131) rotate(-71) scale(.8)"/><use href="#sprig" transform="translate(-170 -163) rotate(-17) scale(.9)"/><use href="#sprig" transform="translate(-238 -189) rotate(-67) scale(.72)"/><use href="#sprig" transform="translate(-285 -204) rotate(-33) scale(.75)"/></g>
+        </defs>
+
+        <!-- Both crown forks meet this continuous trunk, which tapers beneath the highest leaves. -->
+        <path d="M428 6000c92-40 160-111 160-231 0-235-42-462-34-704 5-208 64-366 62-582-2-354-72-649-56-951 13-254 88-455 102-717 14-295-52-538-39-814 7-169 34-324 25-516C637 1234 598 1010 601 785C603 708 612 628 613 553C616 408 653 252 646 92C676 246 652 411 653 553C653 633 649 707 650 785C654 1005 739 1274 735 1496c-3 192-24 346-15 516 14 282 81 541 59 821-22 272-88 460-86 699 3 310 70 622 63 960-4 234-52 414-55 599-4 201 39 432 38 644-1 110 45 193 116 265Z" fill="url(#bark)"/>
+
+        <!-- Long, irregular bark grain. -->
+        <g fill="none" stroke-linecap="round">
+          <path d="M604 5903c37-172-35-512-16-794 14-209 50-383 45-588-5-338-69-668-58-952 10-284 92-472 106-755 13-267-49-546-38-811 10-265 60-572-22-1105" stroke="#b0a66c" stroke-width="3" opacity=".22"/>
+          <path d="M629 5700c-4-228-39-403-16-594 17-143 43-299 39-488-7-322-57-636-50-904 7-276 74-522 83-769 11-269-15-431-30-627" stroke="#d3bd7d" stroke-width="1.4" opacity=".3"/>
+          <path d="M683 5780c-9-205-50-473-24-703 30-261 36-515 7-751-25-246-43-472-8-721 33-230 83-409 75-650-8-258-56-478-36-704 23-255 6-601-40-929" stroke="#111f18" stroke-width="9" opacity=".3"/>
+          <path d="M626 5270c-15-221 41-367 35-564M594 3990c-2-179 39-318 53-449M674 3337c47-228 37-430 5-668M666 2270c-6-148 15-330 8-474M663 1600c-19-181-22-355-32-490" stroke="#bbb178" stroke-width="1.5" opacity=".3"/>
+          <path d="M655 4618c-42-61-47-103-22-151 30 57 34 111 22 151ZM636 3900c-42-68-37-110-14-167 27 61 38 118 14 167ZM696 3051c-21-40-18-89 5-124 29 43 27 87-5 124ZM677 2220c-33-50-26-84-4-117 23 53 27 82 4 117Z" stroke="#a3935e" stroke-width="2" opacity=".32"/>
+          <path d="M655 1180C652 1036 623 838 630 658C635 504 646 371 648 224" stroke="#d3bd7d" stroke-width="1.6" opacity=".28"/>
+          <path d="M677 1310C671 1118 641 881 642 704C649 527 655 370 653 198" stroke="#111f18" stroke-width="3" opacity=".18"/>
+        </g>
+
+        <!-- Branches become increasingly frequent as the visitor climbs. -->
+        <g fill="none" stroke="url(#branch)" stroke-linecap="round">
+          <path d="M633 4770c-112-93-114-224-212-283-76-48-137-38-201-97" stroke-width="25"/>
+          <path d="M426 4490c12-64-29-112-39-167M331 4450c-37 38-83 27-132 30" stroke-width="8"/>
+          <path d="M642 4310c86-101 123-216 258-235" stroke-width="30"/>
+          <path d="M615 3830c-110-136-125-327-274-436-48-35-112-33-151-93" stroke-width="31"/>
+          <path d="M441 3510c6-98-63-141-74-227M339 3392c-80 3-114-27-160-28" stroke-width="9"/>
+          <path d="M663 3360c125-87 129-276 237-336" stroke-width="29"/>
+          <path d="M698 2940c-71-130-164-140-209-286-31-101-86-150-134-206" stroke-width="30"/>
+          <path d="M514 2718c-125-13-166-120-261-132M457 2590c23-81-18-129-27-197" stroke-width="11"/>
+          <path d="M677 2350c118-121 132-283 223-302" stroke-width="35"/>
+          <path d="M677 1970c-132-170-150-355-303-453-75-48-144-119-174-180" stroke-width="43"/>
+          <path d="M501 1634c-5-149-87-179-107-285M369 1514c-94 7-203-26-260-106" stroke-width="17"/>
+          <path d="M679 1630c124-84 117-270 221-337" stroke-width="32"/>
+          <path d="M665 1160c-131-85-174-234-245-370-50-100-139-158-180-278" stroke-width="39"/>
+          <path d="M487 928c-121-10-174-120-274-132M409 772c39-145-8-243-39-333" stroke-width="18"/>
+          <path d="M659 943c110-87 122-264 239-291" stroke-width="30"/>
+          <path d="M632 608c-81-84-88-257-151-337M632 553c65-119 63-237 125-323" stroke-width="25"/>
+        </g>
+
+        <g opacity=".68">
+          <g transform="translate(210 4385)"><g data-sway="3"><use href="#bough" transform="scale(.6)"/></g></g>
+          <g transform="translate(389 4332)"><g data-sway="5"><use href="#sprig" transform="rotate(28) scale(.65)"/></g></g>
+          <g transform="translate(887 4073)"><g data-sway="3.5"><use href="#bough" transform="scale(-.68 .68)"/></g></g>
+        </g>
+        <g opacity=".8">
+          <g transform="translate(205 3319)"><g data-sway="2.8"><use href="#bough" transform="scale(.75)"/></g></g>
+          <g transform="translate(367 3290)"><g data-sway="5"><use href="#sprig" transform="rotate(10) scale(.8)"/></g></g>
+          <g transform="translate(897 3030)"><g data-sway="3"><use href="#bough" transform="scale(-.85 .85)"/></g></g>
+          <g transform="translate(360 2465)"><g data-sway="2.5"><use href="#bough" transform="rotate(14) scale(.75)"/></g></g>
+          <g transform="translate(257 2590)"><g data-sway="4"><use href="#sprig" transform="rotate(-75) scale(.85)"/></g></g>
+          <g transform="translate(430 2407)"><g data-sway="4.5"><use href="#sprig" transform="rotate(9) scale(.85)"/></g></g>
+        </g>
+        <g opacity=".9">
+          <g transform="translate(889 2063)"><g data-sway="2.6"><use href="#bough" transform="scale(-1.1 1.1)"/></g></g>
+          <g transform="translate(202 1350)"><g data-sway="3"><use href="#bough" transform="rotate(10) scale(.95)"/></g></g>
+          <g transform="translate(400 1372)"><g data-sway="2.4"><use href="#bough" transform="rotate(31) scale(1.05)"/></g></g>
+          <g transform="translate(127 1429)"><g data-sway="4.5"><use href="#sprig" transform="rotate(-75) scale(1.1)"/></g></g>
+          <g transform="translate(868 1335)"><g data-sway="3"><use href="#bough" transform="rotate(-24) scale(-1.05 1.05)"/></g></g>
+        </g>
+
+        <!-- Layered botanical crown. -->
+        <g opacity=".6"><use href="#bough" transform="translate(625 600) rotate(-38) scale(1.8)"/><use href="#bough" transform="translate(672 460) rotate(35) scale(-1.8 1.8)"/><use href="#bough" transform="translate(370 439) rotate(-19) scale(1.6)"/><use href="#bough" transform="translate(650 290) rotate(44) scale(1.8)"/></g>
+        <g transform="translate(273 599)"><g data-sway="2.5"><use href="#bough" transform="rotate(21) scale(1.2)"/></g></g>
+        <g transform="translate(222 801)"><g data-sway="3"><use href="#bough" transform="rotate(-55) scale(1.15)"/></g></g>
+        <g transform="translate(385 481)"><g data-sway="2.2"><use href="#bough" transform="rotate(38) scale(1.25)"/></g></g>
+        <g transform="translate(489 287)"><g data-sway="2.6"><use href="#bough" transform="rotate(16) scale(1.2)"/></g></g>
+        <g transform="translate(739 259)"><g data-sway="2"><use href="#bough" transform="rotate(-8) scale(-1.35 1.35)"/></g></g>
+        <g transform="translate(875 665)"><g data-sway="3.2"><use href="#bough" transform="rotate(-28) scale(-1.35 1.35)"/></g></g>
+        <g transform="translate(650 150)"><g data-sway="4"><use href="#sprig" transform="rotate(39) scale(1.3)"/></g></g>
+        <g transform="translate(757 230)"><g data-sway="4.5"><use href="#sprig" transform="rotate(-48) scale(1.4)"/></g></g>
+
+        <!-- Roots spread through the opening, rather than ending as a straight trunk. -->
+        <g fill="none" stroke-linecap="round">
+          <path d="M610 5660c-16 139-124 165-217 186-91 20-124 81-219 92-43 4-75 22-118 32" stroke="url(#bark)" stroke-width="36"/>
+          <path d="M638 5740c-70 93-75 124-112 149-59 39-84 66-104 111M684 5690c12 121 88 146 130 211 23 36 35 64 81 75" stroke="url(#bark)" stroke-width="32"/>
+          <path d="M600 5660c-20 122-135 150-215 173-78 23-130 92-215 93" stroke="#949263" stroke-width="2" opacity=".6"/>
+          <path d="M427 5840c-80-17-143-67-198-71-88-6-116 1-178-25M319 5885c-16 40-65 79-112 109M226 5930c-43-29-85-20-130-41M529 5890c-92 2-141 73-198 99M729 5814c53-19 94 5 143-12" stroke="#7c895c" stroke-width="10"/>
+          <path d="M90 5748c-39 16-61 25-87 14M225 5770c-24-28-55-59-98-65M160 5907c-27 8-84-2-110 26M269 5841c-31-5-49-28-52-44M812 5891c42-8 67 16 88 16" stroke="#889764" stroke-width="3"/>
+          <path d="M624 5790c-15 118 35 126-8 210M660 5760c37 79 21 117 48 177 12 27 38 39 40 63" stroke="#a49c6a" stroke-width="3" opacity=".38"/>
+        </g>
+        <g opacity=".8">
+          <g transform="translate(585 5550)"><g data-sway="3"><use href="#bough" transform="rotate(13) scale(.85)"/></g></g>
+          <g transform="translate(690 5480)"><g data-sway="3.5"><use href="#bough" transform="scale(-.62 .62)"/></g></g>
+          <g transform="translate(834 5808)"><g data-sway="5"><use href="#sprig" transform="rotate(68) scale(.75)"/></g></g>
+          <g transform="translate(489 5819)"><g data-sway="4.5"><use href="#sprig" transform="rotate(-39) scale(.5)"/></g></g>
+          <g transform="translate(203 5940)"><g data-sway="5.5"><use href="#sprig" transform="rotate(-68) scale(.35)"/></g></g>
+        </g>
+      </svg>
+    </div>
+
+    <section class="roots stage" data-stage="roots" data-height="0" aria-labelledby="roots-title">
+      <div class="roots-content wrap" id="roots" tabindex="-1">
+        <div class="root-meta mono"><span>00 / Roots</span><span class="meta-divider">A little closer to earth</span><span class="availability"><i></i><span data-text="availability">Open for freelance</span></span></div>
+        <div class="hero-main">
+          <p class="eyebrow mono" data-text="role">Independent developer & curious observer</p>
+          <h1 id="roots-title"><span data-text="headlineLead">Good things</span><span data-text="headlineMiddle">start at the</span><em><span data-text="headlineAccent">roots.</span><span class="hero-period" aria-hidden="true">✳</span></em></h1>
+          <div class="hero-bottom">
+            <p class="hero-copy" data-text="introduction">I build thoughtful websites and collect little moments through a lens. A little logic, a little instinct. Always growing.</p>
+            <a class="pill pill-light" href="#trunk">Begin the climb <span aria-hidden="true">↑</span></a>
+          </div>
+        </div>
+        <div class="root-footer mono"><span>Websites & wandering</span><a href="#trunk">Scroll up to climb <span class="climb-arrow" aria-hidden="true">↑</span></a><span class="root-coordinate">Ground level / 00 m</span></div>
+      </div>
+      <div class="ground-line" aria-hidden="true"></div>
+    </section>
+
+    <section class="stage trunk wrap" data-stage="trunk" data-height="6" aria-labelledby="trunk-title">
+      <header class="stage-intro" id="trunk" tabindex="-1">
+        <div><p class="eyebrow mono"><i></i>01 / The trunk <span>06 m</span></p><h2 id="trunk-title">A little <em>about me.</em></h2></div>
+        <p class="section-aside">Rooted in curiosity.<br> Made with a little care.</p>
+      </header>
+      <div class="about-body section-body">
+        <div class="about-top">
+          <div class="about-copy"><p class="large-copy" data-text="aboutLead">A developer by practice.<br>A creative at heart.</p><div id="about-paragraphs"></div><span class="small-note mono">A draft introduction, ready for your story.</span></div>
+          <figure class="portrait"><div class="portrait-image"><img id="portrait-image" src="assets/portrait.svg" width="600" height="720" alt="Botanical silhouette, a placeholder for your portrait" loading="lazy"></div><figcaption class="mono"><span>01 / The human behind it</span><span>Portrait placeholder</span></figcaption></figure>
+        </div>
+        <div class="about-details">
+          <div class="services"><p class="eyebrow mono">What I can help grow</p><div id="services"></div></div>
+          <div class="kit"><p class="eyebrow mono">Tools of the trade</p><div id="skills"></div><a id="github-link" class="text-link" href="#treetop">Find me on GitHub <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stage branches wrap" data-stage="branches" data-height="14" aria-labelledby="branches-title">
+      <header class="stage-intro" id="branches" tabindex="-1">
+        <div><p class="eyebrow mono"><i></i>02 / The branches <span>14 m</span></p><h2 id="branches-title">Things I <em>build.</em></h2></div>
+        <p class="section-aside">Ideas take shape.<br> Then find their own way.</p>
+      </header>
+      <div class="work-body section-body">
+        <div class="project-preview" aria-hidden="true"><div class="preview-frame"><img id="project-preview-image" src="assets/projects/lorem-studio.svg" width="1000" height="750" alt=""><span class="preview-label mono" id="project-preview-label">01 / Lorem Studio</span></div><p class="preview-caption mono">A place for your next good thing.</p></div>
+        <ol class="project-list" id="projects"></ol>
+      </div>
+      <p class="section-end mono">Six sample projects · Your work belongs here <span aria-hidden="true">✳</span></p>
+    </section>
+
+    <section class="stage canopy wrap" data-stage="canopy" data-height="23" aria-labelledby="canopy-title">
+      <header class="stage-intro" id="canopy" tabindex="-1">
+        <div><p class="eyebrow mono"><i></i>03 / The canopy <span>23 m</span></p><h2 id="canopy-title">A different <em>lens.</em></h2></div>
+        <p class="section-aside">The small things.<br> The spaces in between.</p>
+      </header>
+      <div class="gallery-content section-body">
+        <div class="gallery-controls"><p class="gallery-note">A collection of borrowed views, until your own arrive.</p><div id="photo-filters" class="photo-filters" role="group" aria-label="Filter photographs"></div></div>
+        <div class="gallery" id="gallery" aria-label="Photography collection"></div>
+        <p id="gallery-status" class="visually-hidden" aria-live="polite"></p>
+      </div>
+      <p class="section-end mono">Sample photography / Unsplash <span aria-hidden="true">✳</span></p>
+    </section>
+
+    <section class="stage treetop wrap" data-stage="treetop" data-height="30" aria-labelledby="treetop-title">
+      <header class="stage-intro" id="treetop" tabindex="-1">
+        <div><p class="eyebrow mono"><i></i>04 / The treetop <span>30 m</span></p><h2 id="treetop-title">Room for your<br>next <em>good idea.</em></h2></div>
+        <p class="section-aside">You made it up here.<br> Let’s grow something.</p>
+      </header>
+      <div class="contact-body section-body">
+        <p class="contact-intro">A new website, a fresh perspective, or the beginning of something good. I’d love to hear about it.</p>
+        <div class="contact-links"><button type="button" class="contact-link" data-contact="email"><span><small class="mono">A little hello</small>Email me</span><span aria-hidden="true">↗</span></button><button type="button" class="contact-link" data-contact="whatsapp"><span><small class="mono">Start a conversation</small>WhatsApp</span><span aria-hidden="true">↗</span></button></div>
+        <a class="back-to-roots mono" href="#roots">Back to the roots <span aria-hidden="true">↓</span></a>
+      </div>
+      <footer class="site-footer"><span>Made slowly. Made with care.</span><span class="mono">© <span id="year"></span> <span data-text="name">Lorem Ipsum</span></span><span class="footer-leaf" aria-hidden="true">✳</span></footer>
+    </section>
+  </main>
+
+  <aside class="quick-contact" aria-label="Contact shortcuts"><button type="button" data-contact="email" aria-label="Contact by email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></button><button type="button" data-contact="whatsapp" aria-label="Contact on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7L4 20l1.3-4.4A8 8 0 1 1 20 11.5Z"/><path d="M9 8c0 4 2 6 6 6l1-2-2-1-1 1-2-2 1-1-1-2Z"/></svg></button></aside>
+
+  <dialog id="navigation" class="navigation-dialog" aria-labelledby="navigation-title">
+    <div class="dialog-top"><span class="mono" id="navigation-title">Find your way</span><button class="close-button mono" data-close="navigation" autofocus>Close <span aria-hidden="true">×</span></button></div>
+    <nav aria-label="Main navigation"><a href="#roots"><small>00</small><span>Roots</span><em>Start here</em></a><a href="#trunk"><small>01</small><span>Trunk</span><em>About & services</em></a><a href="#branches"><small>02</small><span>Branches</span><em>Selected work</em></a><a href="#canopy"><small>03</small><span>Canopy</span><em>Photography</em></a><a href="#treetop"><small>04</small><span>Treetop</span><em>Let’s talk</em></a></nav>
+    <p class="mono menu-footer">A little closer to nature. A little closer to you.</p>
+  </dialog>
+
+  <dialog id="lightbox" class="lightbox" aria-labelledby="lightbox-title">
+    <div class="dialog-top"><span class="mono" id="lightbox-count"></span><button class="close-button mono" data-close="lightbox" autofocus>Close <span aria-hidden="true">×</span></button></div>
+    <figure><img id="lightbox-image" alt=""><figcaption><div><h2 id="lightbox-title"></h2><p class="mono" id="lightbox-category"></p></div><span class="mono">Sample photograph / Unsplash</span></figcaption></figure>
+    <button class="photo-arrow photo-previous" id="photo-previous" aria-label="Previous photograph">←</button><button class="photo-arrow photo-next" id="photo-next" aria-label="Next photograph">→</button>
+  </dialog>
+
+  <dialog id="placeholder-dialog" class="placeholder-dialog" aria-labelledby="placeholder-title"><button class="close-button" data-close="placeholder-dialog" aria-label="Close" autofocus>×</button><p class="eyebrow mono">Make it yours</p><h2 id="placeholder-title">Your next<br><em>conversation.</em></h2><p id="placeholder-message"></p><p class="mono small-note">This is a portfolio placeholder.</p></dialog>
+
+  <noscript><style>.ascent{flex-direction:column}.stage{flex-direction:column}.height-rail,.menu-toggle,.quick-contact,.height-readout{display:none}.section-body{opacity:1}</style><p class="noscript-note">Enable JavaScript for the upward journey, project collection, and interactive photo gallery.</p></noscript>
+</body>
+</html>
